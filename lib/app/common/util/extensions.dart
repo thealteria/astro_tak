@@ -2,7 +2,6 @@ import 'package:astro_tak/app/common/constants.dart';
 import 'package:astro_tak/app/common/util/exports.dart';
 import 'package:astro_tak/app/data/errors/api_error.dart';
 import 'package:astro_tak/app/data/interface_controller/api_interface_controller.dart';
-import 'package:astro_tak/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -74,18 +73,7 @@ extension FutureExt<T> on Future<Response<T>?> {
 
           _retry(_interface, retryFunction);
         } else {
-          Utils.showDialog(
-            errorMessage,
-            onTap: errorMessage != Strings.unauthorize
-                ? null
-                : () {
-                    Get.offAllNamed(
-                      Routes.HOME,
-                      //change the ROUTE to the LOGIN or SPLASH screen so that the
-                      //user can login again on UnauthorizeError error
-                    );
-                  },
-          );
+          Utils.showDialog(errorMessage);
         }
       }
 
