@@ -1,7 +1,6 @@
 import 'package:astro_tak/app/common/util/exports.dart';
 import 'package:astro_tak/app/modules/home/controllers/home_controller.dart';
 import 'package:astro_tak/app/modules/widgets/base_widget.dart';
-import 'package:astro_tak/app/modules/widgets/custom_appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,9 +10,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbarWidget(
-        title: Strings.home,
-      ),
       body: Obx(
         () {
           return ListView.separated(

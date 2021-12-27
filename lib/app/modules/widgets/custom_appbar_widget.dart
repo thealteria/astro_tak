@@ -1,5 +1,6 @@
 import 'package:astro_tak/app/common/util/exports.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomAppbarWidget extends PreferredSize {
   final String? title;
@@ -17,7 +18,7 @@ class CustomAppbarWidget extends PreferredSize {
     this.titleWidget,
     this.leading,
     this.onBackPress,
-    this.backgroundColor = AppColors.kPrimaryColor,
+    this.backgroundColor,
     this.backbuttonColor = Colors.white,
     this.textColor,
     this.textStyle,
@@ -54,7 +55,7 @@ class CustomAppbarWidget extends PreferredSize {
               child: bottom!,
             ),
       leadingWidth: 45.w,
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? Get.theme.appBarTheme.backgroundColor,
       title: title == null
           ? (titleWidget ?? const SizedBox.shrink())
           : Text(

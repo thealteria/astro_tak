@@ -21,9 +21,10 @@ class AppTheme {
     return ThemeData(
       brightness: Brightness.light,
       primaryColor: AppColors.kPrimaryColor,
+      scaffoldBackgroundColor: AppColors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       appBarTheme: const AppBarTheme(
-        color: AppColors.kPrimaryColor,
+        color: AppColors.white,
       ),
       buttonTheme: ButtonThemeData(
         buttonColor: AppColors.kPrimaryColor,
@@ -116,25 +117,10 @@ class AppTheme {
         focusedBorder: inputBorder,
         border: inputBorder,
       ),
-      cardTheme: CardTheme(
-        color: Colors.white.withOpacity(0.85),
-        shape: RoundedRectangleBorder(
-          borderRadius: 10.borderRadius,
-        ),
-      ),
       dialogTheme: DialogTheme(
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: 20.borderRadius,
-        ),
-      ),
-      bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(23.r),
-            topRight: Radius.circular(23.r),
-          ),
         ),
       ),
       colorScheme: ColorScheme.fromSwatch().copyWith(

@@ -22,4 +22,5 @@ class Strings {
   static const String fieldCantBeEmpty = 'Field $cantBeEmpty';
 
   static const String home = 'Home';
+  static const String talkToAstrologer = 'Talk To Astrologer';
 }
