@@ -101,3 +101,17 @@ extension FormatDurationExt on int {
     return "${min.toString().padLeft(2, "0")}:${sec.toString().padLeft(2, "0")} min";
   }
 }
+
+extension ImageWidgetExt on String {
+  Widget imageAsset({
+    double? size,
+    Color? color,
+  }) {
+    return Image.asset(
+      this,
+      height: size?.w,
+      width: size?.w,
+      color: color,
+    );
+  }
+}
