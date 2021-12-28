@@ -23,4 +23,10 @@ class Strings {
 
   static const String home = 'Home';
   static const String talkToAstrologer = 'Talk To Astrologer';
+
+  static const String dailyPanchang = 'Daily Panchang';
+  static const String panchangeDescription =
+      'India is a country known for it\'s festival but knowing the exact '
+      'dates can sometimes be difficult. To ensure you didn\'t miss out '
+      'on the critical dates we bring you the daily panchang.';
 }

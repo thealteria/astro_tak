@@ -10,32 +10,28 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(
-        () {
-          return ListView.separated(
-            separatorBuilder: (context, index) => SizedBox(height: 10.h),
-            itemCount: controller.dataList.length,
-            padding: const EdgeInsets.all(16),
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              final dynamic _data = controller.dataList[index];
-
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Title: ${_data['title'].toString()}',
-                  ),
-                  SizedBox(height: 5.h),
-                  Text(
-                    'Body: ${_data['body'].toString()}',
-                  ),
-                ],
-              );
-            },
-          );
-        },
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              Strings.dailyPanchang,
+              style: AppTextStyle.boldStyle.copyWith(
+                fontSize: Dimens.fontSize22,
+              ),
+            ),
+            10.heightBox,
+            Text(
+              Strings.panchangeDescription,
+              style: AppTextStyle.boldStyle.copyWith(
+                fontSize: Dimens.fontSize14,
+                color: AppColors.silverChalice,
+              ),
+            ),
+            10.heightBox,
+          ],
+        ),
       ),
     );
   }
