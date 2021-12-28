@@ -28,6 +28,9 @@ extension BorderRadiusExt on num {
         width: this.toDouble(),
         style: style ?? BorderStyle.solid,
       );
+
+  SizedBox get heightBox => SizedBox(height: this.h);
+  SizedBox get widthBox => SizedBox(width: this.w);
 }
 
 extension FutureExt<T> on Future<Response<T>?> {
