@@ -29,9 +29,9 @@ class BottomBarWidget extends StatelessWidget {
               e.value,
               width: 20.w,
               height: 20.w,
-              // color: currentIndex == bottomNavIcons.keys.toList().indexOf(e)
-              //     ? AppColors.kPrimaryColor
-              //     : AppColors.silverChalice,
+              color: currentIndex == bottomNavIcons.keys.toList().indexOf(e.key)
+                  ? AppColors.kPrimaryColor
+                  : Colors.grey,
             ),
           );
         },
