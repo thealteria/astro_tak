@@ -11,22 +11,27 @@ class DashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<DashboardController>(
-      builder: (controller) => Scaffold(
-        appBar: CustomAppbarWidget(
-          centerTitle: true,
-          titleWidget: Image.asset(
-            AppImages.icLogo,
-            width: 65.w,
-            height: 65.w,
+    return Scaffold(
+      appBar: CustomAppbarWidget(
+        centerTitle: true,
+        leading: AppImages.icHam.imageAsset(size: 65),
+        titleWidget: AppImages.icLogo.imageAsset(size: 65),
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(8.w),
+            child: AppImages.icProfile.imageAsset(size: 45),
           ),
-        ),
-        bottomNavigationBar: BottomBarWidget(
+        ],
+      ),
+      bottomNavigationBar: GetBuilder<DashboardController>(
+        builder: (controller) => BottomBarWidget(
           onTap: controller.changeTabIndex,
           currentIndex: controller.currentIndex,
           bottomNavIcons: controller.bottomNavIcons,
         ),
-        body: Container(
+      ),
+      body: GetBuilder<DashboardController>(
+        builder: (controller) => Container(
           color: Get.theme.backgroundColor,
           child: controller.widgets[controller.currentIndex],
         ),
