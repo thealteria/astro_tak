@@ -1,5 +1,6 @@
 import 'package:astro_tak/app/common/util/exports.dart';
 import 'package:astro_tak/app/modules/home/views/home_view.dart';
+import 'package:astro_tak/app/modules/talk_to_astrolger/views/talk_to_astrolger_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class DashboardController extends GetxController {
 
   final List<Widget> widgets = [
     const HomeView(),
-    const HomeView(),
+    const TalkToAstrolgerView(),
   ];
 
   void changeTabIndex(int value) {
