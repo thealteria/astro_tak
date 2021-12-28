@@ -45,15 +45,14 @@ class CustomAppbarWidget extends PreferredSize {
       centerTitle: centerTitle,
       elevation: 0,
       actions: actions,
-      actionsIconTheme: IconThemeData(
-        size: 20.w,
-      ),
+     
       bottom: bottom == null
           ? null
           : PreferredSize(
               preferredSize: Size.fromHeight(100.h),
               child: bottom!,
             ),
+      leading: leading,
       leadingWidth: 45.w,
       backgroundColor: backgroundColor ?? Get.theme.appBarTheme.backgroundColor,
       title: title == null
