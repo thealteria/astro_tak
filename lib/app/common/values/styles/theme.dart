@@ -9,11 +9,9 @@ class AppTheme {
   const AppTheme._();
 
   static ThemeData get theme {
-    final inputBorder = 16.outlineInputBorder(
-      borderSide: 3.borderSide(),
-    );
+    const inputBorder = InputBorder.none;
 
-    final hintStyle = AppTextStyle.semiBoldStyle.copyWith(
+    final hintStyle = AppTextStyle.regularStyle.copyWith(
       color: AppColors.doveGray,
       fontSize: Dimens.fontSize14,
     );
@@ -102,9 +100,10 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 12,
-          vertical: 3,
+        fillColor: AppColors.white,
+        contentPadding: EdgeInsets.symmetric(
+          vertical: 25.h,
+          horizontal: 10.w,
         ),
         prefixStyle: AppTextStyle.regularStyle.copyWith(
           fontSize: Dimens.fontSize14,
