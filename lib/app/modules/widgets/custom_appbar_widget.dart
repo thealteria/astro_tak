@@ -45,7 +45,6 @@ class CustomAppbarWidget extends PreferredSize {
       centerTitle: centerTitle,
       elevation: 0,
       actions: actions,
-     
       bottom: bottom == null
           ? null
           : PreferredSize(

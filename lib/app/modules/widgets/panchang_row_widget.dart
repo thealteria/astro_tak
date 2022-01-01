@@ -1,6 +1,7 @@
+import 'dart:ui';
+
 import 'package:astro_tak/app/common/util/exports.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class PanchangRowWidget extends StatelessWidget {
   final String title;
@@ -26,7 +27,8 @@ class PanchangRowWidget extends StatelessWidget {
         ),
         15.widthBox,
         SizedBox(
-          width: Get.width * .63,
+          width: ((window.physicalSize / window.devicePixelRatio).width - 40) *
+              .63,
           child: child,
         ),
       ],

@@ -63,7 +63,7 @@ class AstrologerWidget extends StatelessWidget {
               ),
               30.heightBox,
               CustomElevatedIconButton(
-                buttonWidth: 175.w,
+                buttonWidth: 150.w,
                 title: Strings.takeOnCall,
                 onPressed: onCallTap,
                 icon: const Icon(

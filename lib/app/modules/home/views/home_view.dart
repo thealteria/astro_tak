@@ -56,15 +56,15 @@ class HomeView extends GetView<HomeController> {
                   15.heightBox,
                   PanchangRowWidget(
                     title: Strings.location,
-                    child: CustomAutoCompleteWidget(
-                      hint: Strings.location,
-                      controller: controller.locationController,
-                      list: const [
-                        'am',
-                        'aman',
-                        'amamama',
-                        'amammaamcacccccsddddswdwsdwsdwsdwd',
-                      ],
+                    child: Obx(
+                      () {
+                        return CustomAutoCompleteWidget(
+                          hint: Strings.location.obs.toLowerCase(),
+                          controller: controller.locationController,
+                          list: controller.locationsList,
+                          onSelected: controller.onLocationSelect,
+                        );
+                      },
                     ),
                   ),
                 ],

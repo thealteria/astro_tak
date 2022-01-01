@@ -39,11 +39,14 @@ extension FutureExt<T> on Future<Response<T>?> {
     Function(T value) response, {
     Function(String? error)? onError,
     required VoidCallback retryFunction,
+    bool showLoading = true,
   }) {
     final _interface = Get.find<ApiInterfaceController>();
     _interface.error = null;
 
-    Utils.loadingDialog();
+    if (showLoading) {
+      Utils.loadingDialog();
+    }
 
     this.timeout(
       Constants.timeout,

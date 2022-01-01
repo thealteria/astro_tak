@@ -1,12 +1,13 @@
 import 'package:astro_tak/app/common/util/exports.dart';
+import 'package:astro_tak/app/models/location/location_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomAutoCompleteWidget extends StatelessWidget {
   final TextEditingController? controller;
-  final List<String> list;
+  final List<LocationData> list;
   final String hint;
-  final Function(String)? onSelected;
+  final Function(LocationData)? onSelected;
   final TextInputType? textInputType;
 
   const CustomAutoCompleteWidget({
@@ -20,24 +21,18 @@ class CustomAutoCompleteWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RawAutocomplete<String>(
+    return RawAutocomplete<LocationData>(
       textEditingController: controller,
-      focusNode: controller == null ? null : FocusNode(),
+      focusNode: FocusNode(),
       optionsBuilder: (textEditingValue) {
         if (textEditingValue.text.isEmpty) {
-          return const Iterable<String>.empty();
+          return const Iterable<LocationData>.empty();
         }
 
-        return list.where(
-          (option) {
-            return option.toLowerCase().startsWith(
-                  textEditingValue.text.toLowerCase(),
-                );
-          },
-        );
+        return list;
       },
       onSelected: (selection) {
-        controller?.text = selection;
+        controller?.text = selection.placeName ?? '';
 
         onSelected?.call(selection);
       },
@@ -87,7 +82,7 @@ class CustomAutoCompleteWidget extends StatelessWidget {
                     }
                     return ListTile(
                       dense: true,
-                      title: Text(option),
+                      title: Text(option.placeName ?? ''),
                       onTap: () {
                         onSelected(option);
                       },

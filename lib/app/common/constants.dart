@@ -3,7 +3,7 @@ class Constants {
 
   static const String BASE_URL = 'https://www.astrotak.com/astroapi/api/';
   static const String ASTROLOGER = 'agent/all';
-  static const LOCATION = 'location/place?inputPlace=';
+  static const LOCATION = 'location/place';
   static const PANCHANGE = 'horoscope/daily/panchang';
 
   static const timeout = Duration(seconds: 5);

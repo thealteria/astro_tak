@@ -107,7 +107,7 @@ class AppTheme {
         filled: true,
         fillColor: AppColors.white,
         contentPadding: EdgeInsets.symmetric(
-          vertical: 25.h,
+          vertical: 14.h,
           horizontal: 10.w,
         ),
         prefixStyle: AppTextStyle.regularStyle.copyWith(

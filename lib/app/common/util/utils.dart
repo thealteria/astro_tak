@@ -100,7 +100,6 @@ class Utils {
       initialDate: initialDate ?? DateTime.now(),
       firstDate: firstDate ?? DateTime.now(),
       lastDate: lastDate ?? DateTime(DateTime.now().year + 20),
-      
     ).then((data) {
       if (data != null) {
         onSelectDate(data);

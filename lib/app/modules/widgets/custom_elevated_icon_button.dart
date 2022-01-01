@@ -13,7 +13,7 @@ class CustomElevatedIconButton extends StatelessWidget {
     required this.title,
     required this.onPressed,
     required this.icon,
-    this.height = 52,
+    this.height = 45  ,
     this.buttonWidth,
   }) : super(key: key);
 

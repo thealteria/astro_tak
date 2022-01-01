@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:astro_tak/app/common/constants.dart';
 import 'package:astro_tak/app/models/astrologer/astrologer.dart';
+import 'package:astro_tak/app/models/location/location.dart';
 import 'package:get/get.dart';
 
 import 'api_helper.dart';
@@ -42,6 +43,14 @@ class ApiHelperImpl extends GetConnect with ApiHelper {
     return get(
       Constants.ASTROLOGER,
       decoder: (data) => Astrologer.fromJson(data),
+    );
+  }
+
+  @override
+  Future<Response<Location>> getLocation(String query) {
+    return get(
+      '${Constants.LOCATION}?inputPlace=$query',
+      decoder: (data) => Location.fromJson(data),
     );
   }
 }
