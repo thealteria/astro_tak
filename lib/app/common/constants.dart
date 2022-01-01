@@ -1,7 +1,10 @@
 class Constants {
   const Constants._();
 
-  static const String baseUrl = 'http://jsonplaceholder.typicode.com/';
+  static const String BASE_URL = 'https://www.astrotak.com/astroapi/api/';
+  static const String ASTROLOGER = 'agent/all';
+  static const LOCATION = 'location/place?inputPlace=';
+  static const PANCHANGE = 'horoscope/daily/panchang';
 
   static const timeout = Duration(seconds: 5);
 

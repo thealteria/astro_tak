@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:astro_tak/app/common/constants.dart';
+import 'package:astro_tak/app/models/astrologer/astrologer.dart';
 import 'package:get/get.dart';
 
 import 'api_helper.dart';
@@ -9,7 +10,7 @@ import 'interceptor.dart';
 class ApiHelperImpl extends GetConnect with ApiHelper {
   @override
   void onInit() {
-    httpClient.baseUrl = Constants.baseUrl;
+    httpClient.baseUrl = Constants.BASE_URL;
     httpClient.timeout = Constants.timeout;
 
     addRequestModifier();
@@ -37,7 +38,10 @@ class ApiHelperImpl extends GetConnect with ApiHelper {
   }
 
   @override
-  Future<Response<dynamic>> getPosts() {
-    return get('posts');
+  Future<Response<Astrologer>> getAstrologers() {
+    return get(
+      Constants.ASTROLOGER,
+      decoder: (data) => Astrologer.fromJson(data),
+    );
   }
 }
