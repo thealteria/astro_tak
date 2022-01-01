@@ -60,6 +60,7 @@ class TalkToAstrolgerController extends GetxController {
       _apiHelper.getAstrologers().futureValue(
         (value) {
           astrologersList = value.data ?? [];
+          update();
         },
         retryFunction: getAstrologers,
       );
@@ -70,6 +71,8 @@ class TalkToAstrolgerController extends GetxController {
     isSearchEnable = !isSearchEnable;
     searchAstrologersList.clear();
     searchController.clear();
+
+    update();
   }
 
   void onFilterTap() {}

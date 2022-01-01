@@ -55,16 +55,14 @@ class TalkToAstrolgerView extends GetView<TalkToAstrolgerController> {
             ),
           ),
           15.heightBox,
-          GetBuilder<TalkToAstrolgerController>(
-            builder: (c) {
-              return AstrologersListView(
-                list: c.searchController.text.isNotEmpty
-                    ? c.searchAstrologersList
-                    : c.astrologersList,
-                onCallTap: c.onCallTap,
-              );
-            }
-          ),
+          GetBuilder<TalkToAstrolgerController>(builder: (c) {
+            return AstrologersListView(
+              list: c.searchController.text.isNotEmpty
+                  ? c.searchAstrologersList
+                  : c.astrologersList,
+              onCallTap: c.onCallTap,
+            );
+          }),
         ],
       ),
     );
