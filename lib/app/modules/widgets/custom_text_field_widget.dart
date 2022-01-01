@@ -15,12 +15,13 @@ class CustomTextFieldWidget extends StatelessWidget {
   final int minLines;
   final bool readOnly, addHint, enabled;
   final bool? isDense;
-  final Function()? onTap;
+  final VoidCallback? onTap;
   final InputBorder? border;
   final AutovalidateMode autovalidateMode;
   final BoxConstraints? suffixIconConstraints;
   final EdgeInsets? prefixIconPadding;
   final Color? fillColor;
+  final EdgeInsets? contentPadding;
 
   const CustomTextFieldWidget({
     Key? key,
@@ -48,7 +49,8 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.suffixText,
     this.isDense,
     this.prefixIconPadding,
-    this.fillColor,
+    this.fillColor = AppColors.white,
+    this.contentPadding,
   }) : super(key: key);
 
   @override
@@ -90,16 +92,7 @@ class CustomTextFieldWidget extends StatelessWidget {
             ? null
             : ((controller?.text != null || !readOnly) ? labelText : null),
         hintText: hintText,
-        prefixIconConstraints: BoxConstraints(
-          maxHeight: 40.h,
-          maxWidth: 40.w,
-        ),
-        prefixIcon: prefixIcon == null
-            ? null
-            : Padding(
-                padding: prefixIconPadding ?? EdgeInsets.only(right: 10.w),
-                child: prefixIcon,
-              ),
+        contentPadding: contentPadding,
         prefixText: prefixText,
         suffixText: suffixText,
         prefixStyle: textStyle,
@@ -110,11 +103,11 @@ class CustomTextFieldWidget extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: suffixIcon,
               ),
-        suffixIconConstraints: suffixIconConstraints ??
-            BoxConstraints(
-              maxHeight: 40.h,
-              maxWidth: 40.w,
-            ),
+        // suffixIconConstraints: suffixIconConstraints ??
+        //     BoxConstraints(
+        //       maxHeight: 40.h,
+        //       maxWidth: 40.w,
+        //     ),
       ),
     );
   }
