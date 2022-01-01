@@ -131,3 +131,55 @@ extension DateTimeFormatterExt on DateTime {
     return formatter.format(this);
   }
 }
+
+extension CaseExt on String {
+  String get titleCase {
+    List<String> _words = _groupIntoWords(this);
+
+    List<String> words = _words.map(_upperCaseFirstLetter).toList();
+
+    return words.join(' ');
+  }
+
+  // String get titleCase {
+  //   return this.split(RegExp(r"(?=(?!^)[A-Z])")).join(' ');
+  // }
+
+  String get reverseTitleCase {
+    return this.split(' ').join('');
+  }
+}
+
+List<String> _groupIntoWords(String text) {
+  final symbolSet = {' ', '.', '/', '_', '\\', '-'};
+
+  StringBuffer sb = StringBuffer();
+  List<String> words = [];
+  bool isAllCaps = text.toUpperCase() == text;
+
+  for (int i = 0; i < text.length; i++) {
+    String char = text[i];
+    String? nextChar = i + 1 == text.length ? null : text[i + 1];
+
+    if (symbolSet.contains(char)) {
+      continue;
+    }
+
+    sb.write(char);
+
+    bool isEndOfWord = nextChar == null ||
+        (RegExp(r'[A-Z]').hasMatch(nextChar) && !isAllCaps) ||
+        symbolSet.contains(nextChar);
+
+    if (isEndOfWord) {
+      words.add(sb.toString());
+      sb.clear();
+    }
+  }
+
+  return words;
+}
+
+String _upperCaseFirstLetter(String word) {
+  return '${word.substring(0, 1).toUpperCase()}${word.substring(1).toLowerCase()}';
+}

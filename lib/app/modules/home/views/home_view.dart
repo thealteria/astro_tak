@@ -2,6 +2,7 @@ import 'package:astro_tak/app/common/util/exports.dart';
 import 'package:astro_tak/app/modules/home/controllers/home_controller.dart';
 import 'package:astro_tak/app/modules/widgets/base_widget.dart';
 import 'package:astro_tak/app/modules/widgets/custom_autocomplete_widget.dart';
+import 'package:astro_tak/app/modules/widgets/custom_row_widget.dart';
 import 'package:astro_tak/app/modules/widgets/panchang_row_widget.dart';
 import 'package:astro_tak/app/modules/widgets/panchang_text_field.dart';
 import 'package:flutter/material.dart';
@@ -69,6 +70,30 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ],
               ),
+            ),
+            15.heightBox,
+            Text(
+              'Tithi',
+              style: AppTextStyle.boldStyle.copyWith(
+                fontSize: Dimens.fontSize14,
+              ),
+            ),
+            Obx(
+              () => controller.panchang.tithi == null
+                  ? const SizedBox.shrink()
+                  : Table(
+                      children: controller.panchang.tithi?.details
+                              ?.toJson()
+                              .entries
+                              .map(
+                                (e) => CustomRowWidget(
+                                  title: e.key.titleCase,
+                                  subtitle: e.value.toString(),
+                                ),
+                              )
+                              .toList() ??
+                          [],
+                    ),
             ),
           ],
         ),

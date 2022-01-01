@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:astro_tak/app/common/constants.dart';
 import 'package:astro_tak/app/models/astrologer/astrologer.dart';
 import 'package:astro_tak/app/models/location/location.dart';
+import 'package:astro_tak/app/models/panchang/panchang.dart';
 import 'package:get/get.dart';
 
 import 'api_helper.dart';
@@ -51,6 +52,17 @@ class ApiHelperImpl extends GetConnect with ApiHelper {
     return get(
       '${Constants.LOCATION}?inputPlace=$query',
       decoder: (data) => Location.fromJson(data),
+    );
+  }
+
+  @override
+  Future<Response<Panchang>> getHoroscope(
+    Map<String, dynamic> formData,
+  ) {
+    return post(
+      Constants.PANCHANGE,
+      formData,
+      decoder: (data) => Panchang.fromJson(data),
     );
   }
 }
