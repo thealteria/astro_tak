@@ -22,7 +22,7 @@ class AppTextStyle {
 
   static final TextStyle buttonTextStyle = _textStyle.copyWith(
     fontSize: Dimens.fontSize16,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
   );
 
   static final TextStyle _textStyle = TextStyle(

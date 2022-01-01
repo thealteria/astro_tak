@@ -1,6 +1,4 @@
 import 'package:astro_tak/app/common/util/exports.dart';
-import 'package:astro_tak/app/modules/widgets/custom_autocomplete_widget.dart';
-import 'package:astro_tak/app/modules/widgets/panchang_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

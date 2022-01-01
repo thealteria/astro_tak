@@ -59,7 +59,7 @@ class HomeView extends GetView<HomeController> {
                     child: CustomAutoCompleteWidget(
                       hint: Strings.location,
                       controller: controller.locationController,
-                      list: [
+                      list: const [
                         'am',
                         'aman',
                         'amamama',

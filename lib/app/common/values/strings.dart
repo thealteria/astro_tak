@@ -33,4 +33,7 @@ class Strings {
   static const String date = 'Date';
   static const String location = 'Location';
   static const String noResultsFound = 'No results found';
+  static const String years = 'Years';
+  static const String min = 'Min';
+  static const String takeOnCall = 'Take on Call';
 }

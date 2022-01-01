@@ -66,6 +66,9 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (states) => AppColors.kPrimaryColor,
+          ),
           padding: MaterialStateProperty.resolveWith(
             (_) => EdgeInsets.zero,
           ),
@@ -79,11 +82,13 @@ class AppTheme {
             },
           ),
           textStyle: MaterialStateProperty.resolveWith<TextStyle>(
-            (_) => AppTextStyle.buttonTextStyle,
+            (_) => AppTextStyle.buttonTextStyle.copyWith(
+              color: AppColors.white,
+            ),
           ),
           shape: MaterialStateProperty.resolveWith<RoundedRectangleBorder>(
             (states) => RoundedRectangleBorder(
-              borderRadius: 10.borderRadius,
+              borderRadius: 5.borderRadius,
             ),
           ),
         ),
