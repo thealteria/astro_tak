@@ -29,4 +29,8 @@ class Strings {
       'India is a country known for it\'s festival but knowing the exact '
       'dates can sometimes be difficult. To ensure you didn\'t miss out '
       'on the critical dates we bring you the daily panchang.';
+
+  static const String date = 'Date';
+  static const String location = 'Location';
+  static const String noResultsFound = 'No results found';
 }
