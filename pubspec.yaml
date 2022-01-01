@@ -41,6 +41,8 @@ dependencies:
   #for state management
   get: ^4.6.1
 
+  intl:
+
   #for image
   octo_image: ^1.0.1
 

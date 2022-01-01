@@ -4,6 +4,7 @@ import 'package:astro_tak/app/data/errors/api_error.dart';
 import 'package:astro_tak/app/data/interface_controller/api_interface_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class Extensions {}
 
@@ -116,5 +117,14 @@ extension ImageWidgetExt on String {
       width: size?.w,
       color: color,
     );
+  }
+}
+
+extension DateTimeFormatterExt on DateTime {
+  String formatedDate({
+    String dateFormat = 'yyyy-MM-dd',
+  }) {
+    final formatter = DateFormat(dateFormat);
+    return formatter.format(this);
   }
 }
