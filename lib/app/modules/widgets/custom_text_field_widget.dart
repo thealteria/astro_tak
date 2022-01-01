@@ -97,6 +97,7 @@ class CustomTextFieldWidget extends StatelessWidget {
         suffixText: suffixText,
         prefixStyle: textStyle,
         suffixStyle: textStyle,
+        prefixIcon: prefixIcon,
         suffixIcon: suffixIcon == null
             ? null
             : Padding(
