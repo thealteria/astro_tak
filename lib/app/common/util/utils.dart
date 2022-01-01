@@ -88,4 +88,23 @@ class Utils {
       (route) => route.settings.name == routeName,
     );
   }
+
+  static void datePicker(
+    Function(DateTime dateTime) onSelectDate, {
+    DateTime? initialDate,
+    DateTime? firstDate,
+    DateTime? lastDate,
+  }) {
+    showDatePicker(
+      context: Get.overlayContext!,
+      initialDate: initialDate ?? DateTime.now(),
+      firstDate: firstDate ?? DateTime.now(),
+      lastDate: lastDate ?? DateTime(DateTime.now().year + 20),
+      
+    ).then((data) {
+      if (data != null) {
+        onSelectDate(data);
+      }
+    });
+  }
 }
